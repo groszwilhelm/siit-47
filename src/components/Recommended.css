@@ -1,0 +1,28 @@
+.movie-list {
+  display: flex;
+  /* flex-flow: wrap; */
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.movie__image {
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+}
+
+.movie__title {
+  margin: 0;
+  font-size: .8rem;
+}
+
+.movie__year,
+.movie__rating,
+.movie__category {
+  margin-right: .5rem;
+}
+
+span {
+  font-size: .6rem;
+}
