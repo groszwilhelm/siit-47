@@ -1,23 +1,28 @@
 import PropTypes from "prop-types";
 
+import './MovieCard.css';
+
 // function MovieCard(props) {
 // const { movie, wili, key } = props;
-function MovieCard({ movieElement }) {
+function MovieCard({ movieElement, large = false }) {
   const { id, imageUrl, year, rating, category, title } = movieElement;
 
   return (
-    <li className="movie" key={id}>
+    <li className={`movie ${large ? "movie--large" : "movie--small"}`} key={id}>
       <img className="movie__image" src={imageUrl} />
-      <div>
-        <span className="movie__year">{year}</span>
-        <span className="movie__rating">{rating}</span>
-        <span className="movie__category">{category}</span>
-      </div>
-
       <div className="movie__bookmark">
         <i className="movie__bookmark-icon" />
       </div>
-      <h3 className="movie__title">{title}</h3>
+
+      <div className='movie__info'>
+        <div>
+          <span className="movie__year">{year}</span>
+          <span className="movie__rating">{rating}</span>
+          <span className="movie__category">{category}</span>
+        </div>
+
+        <h3 className="movie__title">{title}</h3>
+      </div>
     </li>
   );
 }
@@ -25,12 +30,14 @@ function MovieCard({ movieElement }) {
 export default MovieCard;
 
 MovieCard.propTypes = {
-  movieElement: {
+  large: PropTypes.bool,
+  movieElement: PropTypes.shape({
     id: PropTypes.string,
     imageUrl: PropTypes.string,
-    year: PropTypes.string,
+    year: PropTypes.number,
     rating: PropTypes.string,
     category: PropTypes.string,
     title: PropTypes.string,
-  },
+    bookmark: PropTypes.bool,
+  }),
 };

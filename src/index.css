@@ -1,0 +1,22 @@
+:root {
+  --primary-color: rgb(16 20 31);
+  --grey-light: rgb(204 209 216);
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+input {
+  background-color: var(--primary-color);
+  border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: white;
+}

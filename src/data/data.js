@@ -1,6 +1,6 @@
-import { Movie } from "./models";
+import { Movie } from "../components/models";
 
-const resolution = '400/300';
+const resolution = "400/300";
 
 export const movies = [
   new Movie(
@@ -9,7 +9,8 @@ export const movies = [
     1993,
     "PG",
     "Movie",
-    false
+    false,
+    true
   ),
   new Movie(
     "The great lands",
@@ -17,7 +18,8 @@ export const movies = [
     1993,
     "PG",
     "Movie",
-    false
+    false,
+    true
   ),
   new Movie(
     "The great lands",
@@ -25,7 +27,8 @@ export const movies = [
     1993,
     "PG",
     "Movie",
-    false
+    false,
+    true
   ),
   new Movie(
     "The great lands",
@@ -33,7 +36,8 @@ export const movies = [
     1993,
     "PG",
     "Movie",
-    false
+    false,
+    true
   ),
   new Movie(
     "The great lands",
@@ -41,7 +45,8 @@ export const movies = [
     1993,
     "PG",
     "Movie",
-    false
+    false,
+    true
   ),
   new Movie(
     "The great lands",
@@ -49,6 +54,7 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
   new Movie(
@@ -57,6 +63,7 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
   new Movie(
@@ -65,6 +72,7 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
   new Movie(
@@ -73,6 +81,7 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
   new Movie(
@@ -81,6 +90,7 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
   new Movie(
@@ -89,6 +99,9 @@ export const movies = [
     1993,
     "PG",
     "Movie",
+    false,
     false
   ),
 ];
+
+export const trendingMovies = movies.filter(({ trending }) => trending);

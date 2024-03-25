@@ -1,0 +1,43 @@
+/* BEM -> BLOCK ELEMENT MODIFIER 
+          movie __ image --  large
+*/
+
+.movie--large .movie__image {
+  width: 310px;
+  height: 150px;
+}
+
+.movie--large {
+  position: relative;
+}
+
+.movie--large .movie__info {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.movie__image {
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+}
+
+.movie__title {
+  margin: 0;
+  font-size: .8rem;
+}
+
+.movie__year,
+.movie__rating,
+.movie__category {
+  margin-right: .5rem;
+}
+
+span {
+  font-size: .6rem;
+}
+
+.movie__info {
+  color: white;
+}
