@@ -1,11 +1,13 @@
-import { movies } from "../../data/data";
 import MovieCard from "../MovieCard";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+
+import { Link } from "react-router-dom";
 
 import "./Recommended.css";
 
-function Recommended({ searchTerm }) {
+
+function Recommended({ searchTerm, movies }) {
   const filteredMovies = movies.filter(({ title }) =>
     title.toUpperCase().includes(searchTerm.toUpperCase())
   );
@@ -22,11 +24,10 @@ function Recommended({ searchTerm }) {
       ) : (
         <ul className="movie-list">
           {filteredMovies.map((movieItem) => (
-            <MovieCard
-              movieElement={movieItem}
-              key={movieItem.id}
-              wili="hello"
-            />
+            // Link === <a href="/movie/${movieItem.id}"
+            <Link key={movieItem.id} to={`/movie/${movieItem.id}`}>
+              <MovieCard movieElement={movieItem} wili="hello" />
+            </Link>
           ))}
         </ul>
       )}
@@ -38,4 +39,5 @@ export default Recommended;
 
 Recommended.propTypes = {
   searchTerm: PropTypes.string,
+  movies: PropTypes.any,
 };

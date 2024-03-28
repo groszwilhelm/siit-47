@@ -1,9 +1,13 @@
-import { trendingMovies } from '../data/data';
 import MovieCard from '../components/MovieCard';
 
 import './Carousel.css';
 
-function Carousel() {
+import PropTypes from 'prop-types';
+
+
+function Carousel({ movies }) {
+   const trendingMovies = movies.filter(({ trending }) => trending);
+
   return (
     <ul className="trending">
       {trendingMovies.map((movie) => (
@@ -14,3 +18,7 @@ function Carousel() {
 }
 
 export default Carousel;
+
+Carousel.propTypes = {
+  movies: PropTypes.array,
+};
