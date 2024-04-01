@@ -5,9 +5,13 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 import "./Recommended.css";
+import { useContext } from 'react';
+import { MovieContext } from '../../App';
 
 
-function Recommended({ searchTerm, movies }) {
+function Recommended({ searchTerm }) {
+  const { movies } = useContext(MovieContext);
+
   const filteredMovies = movies.filter(({ title }) =>
     title.toUpperCase().includes(searchTerm.toUpperCase())
   );

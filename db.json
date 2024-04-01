@@ -109,6 +109,38 @@
       "category": "Movie",
       "bookmark": false,
       "trending": false
+    },
+    {
+      "id": "a297",
+      "title": "New movie",
+      "imageUrl": "https://picsum.photos/id/37/200/300",
+      "year": "2003",
+      "rating": "pg",
+      "category": "series"
+    },
+    {
+      "id": "989c",
+      "title": "2324ww",
+      "imageUrl": "https://picsum.photos/id/237/200/300",
+      "year": "1231234",
+      "rating": "pg",
+      "category": "movie"
+    },
+    {
+      "id": "91c7",
+      "title": "DSadsadsa",
+      "imageUrl": "https://picsum.photos/id/2/300/200",
+      "year": "2018-01-29",
+      "rating": "pg",
+      "category": "movie"
+    },
+    {
+      "id": "e9b9",
+      "title": "dsadsa",
+      "imageUrl": "https://picsum.photos/id/2/300/200",
+      "year": "2024",
+      "rating": "pg",
+      "category": "movie"
     }
   ]
 }

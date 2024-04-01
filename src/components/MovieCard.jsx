@@ -34,7 +34,7 @@ MovieCard.propTypes = {
   movieElement: PropTypes.shape({
     id: PropTypes.string,
     imageUrl: PropTypes.string,
-    year: PropTypes.number,
+    year: PropTypes.any,
     rating: PropTypes.string,
     category: PropTypes.string,
     title: PropTypes.string,
