@@ -13,17 +13,17 @@ import { useState, useEffect, useContext } from 'react';
 // }
 
 // Version 2
-async function retrieveMovies(setMovies) {
-  const response = await fetch("http://localhost:3000/movies");
-  const moviesFromServer = await response.json();
+// async function retrieveMovies(setMovies) {
+//   const response = await fetch("http://localhost:3000/movies");
+//   const moviesFromServer = await response.json();
 
-  setMovies(moviesFromServer);
-}
+//   setMovies(moviesFromServer);
+// }
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   // const [movies, setMovies] = useState([]);
-  const { setMovies } = useContext(MovieContext);
+  // const { setMovies } = useContext(MovieContext);
 
   function onSearchChange(_searchTerm) {
     // searchTerm = _searchTerm
@@ -41,10 +41,10 @@ export default function Home() {
   //   getMovies();
   // }, []);
 
-  // Version 2
-  useEffect(() => {
-    retrieveMovies(setMovies);
-  }, []);
+  // // Version 2
+  // useEffect(() => {
+  //   retrieveMovies(setMovies);
+  // }, []);
 
   return (
     <>

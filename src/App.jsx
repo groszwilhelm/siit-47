@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -6,13 +6,24 @@ import Home from "./components/home/Home";
 import MovieDetails from "./components/movie-details/MovieDetails";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CreateMovie from './components/create-movie/CreateMovie';
-import Navbar from './components/Navbar';
+import CreateMovie from "./components/create-movie/CreateMovie";
+import Navbar from "./components/Navbar";
 
 export const MovieContext = React.createContext();
 
+async function retrieveMovies(setMovies) {
+  const response = await fetch("http://localhost:3000/movies");
+  const moviesFromServer = await response.json();
+
+  setMovies(moviesFromServer);
+}
+
 function App() {
   const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    retrieveMovies(setMovies);
+  }, []);
 
   return (
     // React fragment -> Can also be used as React.Fragment
@@ -26,6 +37,10 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/movie/:idFromPath" element={<MovieDetails />}></Route>
             <Route path="/create-movie" element={<CreateMovie />}></Route>
+            <Route
+              path="/edit-movie/:idFromPath"
+              element={<CreateMovie />}
+            ></Route>
           </Routes>
         </BrowserRouter>
       </MovieContext.Provider>
