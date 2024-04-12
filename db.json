@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "email": "hello@gmail.com",
+      "password": "$2a$10$Ra7MHjJfiJeukpAosVkLm.JY9xej3fHAnn1hNks4ERBSfUj/tszPK",
+      "id": 1
+    }
+  ],
   "movies": [
     {
       "id": "7f621d63-4f65-459c-bb7f-5206ef7cf9c7",
@@ -14,16 +21,6 @@
       "id": "a30767cc-0996-4b48-aa49-e1373c08c177",
       "title": "The great lands",
       "imageUrl": "https://picsum.photos/id/100/400/300",
-      "year": 1993,
-      "rating": "PG",
-      "category": "Movie",
-      "bookmark": false,
-      "trending": true
-    },
-    {
-      "id": "474ab55b-94e5-480c-9a57-47581ef225dd",
-      "title": "The great lands",
-      "imageUrl": "https://picsum.photos/id/120/400/300",
       "year": 1993,
       "rating": "PG",
       "category": "Movie",
@@ -71,16 +68,6 @@
       "trending": false
     },
     {
-      "id": "80d21417-54cf-4f94-8554-07a70d2b2b31",
-      "title": "The great lands",
-      "imageUrl": "https://picsum.photos/id/23/400/300",
-      "year": 1993,
-      "rating": "PG",
-      "category": "Movie",
-      "bookmark": false,
-      "trending": false
-    },
-    {
       "id": "5e507f3c-2534-45bb-8311-6d8920b975f7",
       "title": "The great lands",
       "imageUrl": "https://picsum.photos/id/198/400/300",
@@ -107,28 +94,12 @@
       "category": "movie"
     },
     {
-      "id": "e9b9",
-      "title": "dsadsa",
-      "imageUrl": "https://picsum.photos/id/2/300/200",
-      "year": "2024",
-      "rating": "pg",
-      "category": "movie"
-    },
-    {
       "id": "fdf9",
       "title": "The great lands",
       "imageUrl": "https://picsum.photos/id/200/400/300",
       "year": "1993",
       "rating": "pg",
       "category": "movie"
-    },
-    {
-      "title": "This is a lovely cow",
-      "imageUrl": "https://picsum.photos/id/200/400/300",
-      "year": "1993",
-      "rating": "18+",
-      "category": "movie",
-      "id": "b90b"
     }
   ]
 }

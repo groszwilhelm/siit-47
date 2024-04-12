@@ -2,7 +2,9 @@
 import { useParams, useNavigate } from "react-router-dom";
 
 import "./MovieDetails.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { MovieContext } from '../../App';
+import { retrieveMovies } from '../../lib/movies';
 
 async function retrieveMovie(setMovie, movieId) {
   const response = await fetch(`http://localhost:3000/movies/${movieId}`);
@@ -16,6 +18,7 @@ export default function MovieDetails() {
   const { idFromPath } = useParams();
   // const selectedMovie = movies.find((movie) => movie.id === idFromPath);
   const navigate = useNavigate();
+  const { movies, setMovies } = useContext(MovieContext)
 
   useEffect(() => {
     retrieveMovie(setMovie, idFromPath);
@@ -42,7 +45,14 @@ export default function MovieDetails() {
     if (userConfirmedAction) {
       fetch(`http://localhost:3000/movies/${id}`, {
         method: "DELETE",
-      }).then(() => navigate('/'));
+      }).then(() => {
+        // const updatedMovies = movies.filter((movie) => movie.id !== id);
+        // setMovies(updatedMovies);
+
+        retrieveMovies(setMovies);
+
+        navigate('/');
+      });
     }
   }
 

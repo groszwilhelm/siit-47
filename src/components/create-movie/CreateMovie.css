@@ -7,7 +7,7 @@ fieldset {
   border: none;
 }
 
-.form-input {
+input {
   border: 1px solid white;
   color: white;
 }

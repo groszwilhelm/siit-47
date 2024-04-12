@@ -8,15 +8,10 @@ import MovieDetails from "./components/movie-details/MovieDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateMovie from "./components/create-movie/CreateMovie";
 import Navbar from "./components/Navbar";
+import { retrieveMovies } from './lib/movies';
+import { Register } from './components/auth/register/Register';
 
 export const MovieContext = React.createContext();
-
-async function retrieveMovies(setMovies) {
-  const response = await fetch("http://localhost:3000/movies");
-  const moviesFromServer = await response.json();
-
-  setMovies(moviesFromServer);
-}
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -41,6 +36,7 @@ function App() {
               path="/edit-movie/:idFromPath"
               element={<CreateMovie />}
             ></Route>
+            <Route path='/register' element={<Register />}></Route>
           </Routes>
         </BrowserRouter>
       </MovieContext.Provider>

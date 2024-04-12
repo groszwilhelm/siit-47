@@ -10,10 +10,11 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "test",
-    "server": "npx json-server db.json"
+    "server": "json-server db.json -m ./node_modules/json-server-auth -r routes.json"
   },
   "dependencies": {
-    "json-server": "^1.0.0-alpha.23",
+    "json-server": "^0.17.3",
+    "json-server-auth": "^2.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
