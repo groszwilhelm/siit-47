@@ -5,26 +5,33 @@ import "./App.css";
 import Home from "./components/home/Home";
 import MovieDetails from "./components/movie-details/MovieDetails";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import CreateMovie from "./components/create-movie/CreateMovie";
 import Navbar from "./components/Navbar";
-import { retrieveMovies } from './lib/movies';
-import { Register } from './components/auth/register/Register';
+import { retrieveMovies } from "./lib/movies";
+import { Register } from "./components/auth/register/Register";
+import Login from "./components/auth/login/Login";
 
 export const MovieContext = React.createContext();
+export const AuthContext = React.createContext();
 
 function App() {
+  const navigate = useNavigate();
+  const accessToken = localStorage.getItem("accessToken");
   const [movies, setMovies] = useState([]);
+  const [auth, setAuth] = useState(accessToken);
 
   useEffect(() => {
-    retrieveMovies(setMovies);
-  }, []);
+    retrieveMovies(setMovies, auth, navigate).catch((error) =>
+      console.log(error)
+    );
+  }, [auth]);
 
   return (
     // React fragment -> Can also be used as React.Fragment
     <>
       <MovieContext.Provider value={{ movies, setMovies }}>
-        <BrowserRouter>
+        <AuthContext.Provider value={{ auth, setAuth }}>
           <Navbar />
 
           {/* Switch statement */}
@@ -36,9 +43,10 @@ function App() {
               path="/edit-movie/:idFromPath"
               element={<CreateMovie />}
             ></Route>
-            <Route path='/register' element={<Register />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route path="/login" element={<Login />}></Route>
           </Routes>
-        </BrowserRouter>
+        </AuthContext.Provider>
       </MovieContext.Provider>
     </>
   );

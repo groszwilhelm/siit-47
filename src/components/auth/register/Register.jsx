@@ -1,4 +1,8 @@
+import { useNavigate } from 'react-router-dom';
+
 export function Register() {
+  const navigate = useNavigate();
+
   function register(event) {
     event.preventDefault();
 
@@ -19,11 +23,10 @@ export function Register() {
     fetch("http://localhost:3000/register", {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(user)
-    })
-    .then(response => console.log(response));
+      body: JSON.stringify(user),
+    }).then(() => navigate('/login'));
   }
 
   return (

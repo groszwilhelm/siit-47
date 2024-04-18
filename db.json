@@ -4,6 +4,12 @@
       "email": "hello@gmail.com",
       "password": "$2a$10$Ra7MHjJfiJeukpAosVkLm.JY9xej3fHAnn1hNks4ERBSfUj/tszPK",
       "id": 1
+    },
+    {
+      "email": "groszwilhelm@gmail.com",
+      "password": "$2a$10$JefDtSnGbLx48ISER2WhY.bUnHNBirKRj9GiqL.YHs16gj1GdC2a.",
+      "username": "wilgro",
+      "id": 2
     }
   ],
   "movies": [

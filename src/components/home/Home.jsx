@@ -1,9 +1,9 @@
-import { MovieContext } from '../../App';
+import { MovieContext } from "../../App";
 import Carousel from "../Carousel";
 import Recommended from "../recommended/Recommended";
 import Search from "../search/Search";
 
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from "react";
 
 // Version 1
 // function retrieveMovies() {
@@ -23,7 +23,7 @@ import { useState, useEffect, useContext } from 'react';
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   // const [movies, setMovies] = useState([]);
-  // const { setMovies } = useContext(MovieContext);
+  const { movies } = useContext(MovieContext);
 
   function onSearchChange(_searchTerm) {
     // searchTerm = _searchTerm
@@ -45,6 +45,14 @@ export default function Home() {
   // useEffect(() => {
   //   retrieveMovies(setMovies);
   // }, []);
+
+  console.log(movies);
+
+  debugger;
+
+  if (!movies?.length) {
+    return <h1>There are no movies yet!</h1>;
+  }
 
   return (
     <>
